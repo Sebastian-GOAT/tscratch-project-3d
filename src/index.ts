@@ -1,4 +1,4 @@
-import { Engine } from 'tscratch';
+import { canvas, Engine, Text } from 'tscratch';
 import Renderer from './Renderer.ts';
 import vertices from './lib/vertices.ts';
 import edges from './lib/edges.ts';
@@ -7,6 +7,15 @@ const engine = Engine.init();
 
 const penSize = 10;
 const scale = 75;
+
+// Watermark
+new Text({
+    content: 'Made with TScratch',
+    x: -canvas.width / 2 + 5,
+    y: canvas.height / 2 - 5,
+    align: 'left',
+    baseline: 'top'
+});
 
 // Renderer
 const renderer = new Renderer({
